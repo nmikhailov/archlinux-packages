@@ -15,11 +15,10 @@ source=('catalyst_pxp'
 
 package() {
     install -Dm644 "${srcdir}/catalyst_pxp.service" "${pkgdir}/usr/lib/systemd/system/catalyst_pxp.service"
-
     install -Dm755 "${srcdir}/catalyst_pxp" "${pkgdir}/usr/bin/catalyst_pxp"
-    install -Dm755 "${srcdir}/catalyst_pxp.conf" "${pkgdir}/etc/modprobe.d/catalyst_pxp.conf"
+    install -Dm644 "${srcdir}/catalyst_pxp.conf" "${pkgdir}/etc/modprobe.d/catalyst_pxp.conf"
 }
 
 md5sums=('e208282887a16202263f8b1905ea7b39'
-         '129f28c335a5e2b68571166a81834c4c'
+         '51024752454a246d1fac18cb67526457'
          'a9ee81885aba5356b094596f4f2f2440')
