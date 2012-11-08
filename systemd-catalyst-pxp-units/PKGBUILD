@@ -1,0 +1,20 @@
+# Maintainer: NSL <nslqqq@gmail.com>
+
+pkgname=systemd-catalyst-pxp-mux-units
+pkgver=0.1
+pkgrel=1
+pkgdesc="Forces system to use radeon/intel or fglrx driver at startup. For MUXed A+I platforms."
+arch=('any')
+url=""
+license=('GPL')
+depends=('systemd', 'catalyst-total-pxp')
+source=('catalyst_pxp'
+        'catalyst_pxp.service')
+
+package() {
+    install -Dm644 "${srcdir}/catalyst_pxp.service" "${pkgdir}/usr/lib/systemd/system/catalyst_pxp.service"
+    install -Dm755 "${srcdir}/catalyst_pxp" "${pkgdir}/usr/bin/catalyst_pxp"
+}
+
+md5sums=('129f28c335a5e2b68571166a81834c4c'
+         'e208282887a16202263f8b1905ea7b39')
